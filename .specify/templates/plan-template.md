@@ -31,7 +31,13 @@
 
 *GATE: Must pass before Phase 0 research. Re-check after Phase 1 design.*
 
-[Gates determined based on constitution file]
+- **语言与文档**：本功能相关的 `spec.md`、`plan.md`、`tasks.md` 是否将主要说明（用户故事、
+  验收标准、任务描述等）用中文撰写，且仅在必须使用英文（如 API 名称、配置 key）时保留英文？
+- **技术栈**：是否明确采用 SwiftUI 作为 UI 技术栈，并声明目标平台为 iOS 17+？
+- **资源管理**：本功能涉及的本地资源（图片、文案、颜色等）是否规划为通过 R.swift 统一管理？
+- **目录结构**：本功能是否需要新增目录/文件？如果需要，是否避免新增以 `.` 开头的隐藏目录，
+  如确有必要是否已在文档中说明并与开发者确认？
+
 
 ## Project Structure
 

@@ -12,6 +12,12 @@ description: "Task list template for feature implementation"
 
 **Organization**: Tasks are grouped by user story to enable independent implementation and testing of each story.
 
+> 说明（中文）：  
+> - 由 `/speckit.tasks` 生成的任务列表，任务描述应优先使用中文书写；  
+> - 如需引用 Swift / iOS / 第三方库的类名、方法名、文件路径等，保留英文原文即可；  
+> - 如任务会引入新的本地资源，请在描述中指明需通过 R.swift 管理；  
+> - 如任务需要新增目录/文件，需在描述中说明路径，并避免新增以 `.` 开头的隐藏目录。
+
 ## Format: `[ID] [P?] [Story] Description`
 
 - **[P]**: Can run in parallel (different files, no dependencies)
@@ -23,6 +29,8 @@ description: "Task list template for feature implementation"
 - **Single project**: `src/`, `tests/` at repository root
 - **Web app**: `backend/src/`, `frontend/src/`
 - **Mobile**: `api/src/`, `ios/src/` or `android/src/`
+  - iOS 项目中应基于 SwiftUI 与 iOS 17+ 的结构进行具体化，例如：`iOS/App/`, `iOS/Features/`, `iOS/Resources/` 等；
+  - 所有本地资源（图片、文案等）应位于 R.swift 可扫描到的资源目录下。
 - Paths shown below assume single project - adjust based on plan.md structure
 
 <!-- 

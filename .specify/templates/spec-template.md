@@ -5,7 +5,7 @@
 **Status**: Draft  
 **Input**: User description: "$ARGUMENTS"
 
-## User Scenarios & Testing *(mandatory)*
+## User Scenarios & Testing *(mandatory / 用户场景与测试：必须项)*
 
 <!--
   IMPORTANT: User stories should be PRIORITIZED as user journeys ordered by importance.
@@ -20,13 +20,13 @@
   - Demonstrated to users independently
 -->
 
-### User Story 1 - [Brief Title] (Priority: P1)
+### User Story 1 - [简要标题] (Priority: P1)
 
-[Describe this user journey in plain language]
+[用中文描述该用户旅程的完整流程，确保非技术干系人也能看懂]
 
-**Why this priority**: [Explain the value and why it has this priority level]
+**Why this priority / 优先级原因**: [用中文解释该用户故事的业务价值，以及为何设置为当前优先级]
 
-**Independent Test**: [Describe how this can be tested independently - e.g., "Can be fully tested by [specific action] and delivers [specific value]"]
+**Independent Test / 独立可测方式**: [用中文描述如何在不依赖其他故事的前提下验证该故事是否完成]
 
 **Acceptance Scenarios**:
 
@@ -35,9 +35,9 @@
 
 ---
 
-### User Story 2 - [Brief Title] (Priority: P2)
+### User Story 2 - [简要标题] (Priority: P2)
 
-[Describe this user journey in plain language]
+[用中文描述该用户旅程的完整流程]
 
 **Why this priority**: [Explain the value and why it has this priority level]
 
@@ -49,9 +49,9 @@
 
 ---
 
-### User Story 3 - [Brief Title] (Priority: P3)
+### User Story 3 - [简要标题] (Priority: P3)
 
-[Describe this user journey in plain language]
+[用中文描述该用户旅程的完整流程]
 
 **Why this priority**: [Explain the value and why it has this priority level]
 
@@ -75,14 +75,14 @@
 - What happens when [boundary condition]?
 - How does system handle [error scenario]?
 
-## Requirements *(mandatory)*
+## Requirements *(mandatory / 需求：必须项)*
 
 <!--
   ACTION REQUIRED: The content in this section represents placeholders.
   Fill them out with the right functional requirements.
 -->
 
-### Functional Requirements
+### Functional Requirements / 功能性需求
 
 - **FR-001**: System MUST [specific capability, e.g., "allow users to create accounts"]
 - **FR-002**: System MUST [specific capability, e.g., "validate email addresses"]  
@@ -100,14 +100,14 @@
 - **[Entity 1]**: [What it represents, key attributes without implementation]
 - **[Entity 2]**: [What it represents, relationships to other entities]
 
-## Success Criteria *(mandatory)*
+## Success Criteria *(mandatory / 成功标准：必须项)*
 
 <!--
   ACTION REQUIRED: Define measurable success criteria.
   These must be technology-agnostic and measurable.
 -->
 
-### Measurable Outcomes
+### Measurable Outcomes / 可度量结果
 
 - **SC-001**: [Measurable metric, e.g., "Users can complete account creation in under 2 minutes"]
 - **SC-002**: [Measurable metric, e.g., "System handles 1000 concurrent users without degradation"]
