@@ -1,0 +1,6 @@
+Product Spec
+
+Core flow:
+1. Signup
+2. Verify email
+3. First login

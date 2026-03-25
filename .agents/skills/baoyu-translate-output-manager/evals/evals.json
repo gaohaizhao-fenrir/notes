@@ -1,0 +1,104 @@
+{
+  "skill_name": "baoyu-translate-output-manager",
+  "evals": [
+    {
+      "id": 0,
+      "prompt": "请参考 baoyu-translate 翻译 evals/files/guide.md 到中文（zh-CN），并把翻译文件放在原文件同目录。",
+      "expected_output": "生成与原文件同目录的译文文件，命名包含 translated 与 zh-CN，且原文件未改写。",
+      "files": ["evals/files/guide.md"],
+      "expectations": [
+        "译文文件位于源文件同目录",
+        "译文文件名包含 .translated.zh-CN",
+        "原始文件内容保持不变"
+      ]
+    },
+    {
+      "id": 1,
+      "prompt": "把 evals/files/README.en.md 翻译成日语（ja），要求能从文件名看出和源文件关系及目标语言。",
+      "expected_output": "生成 README.en.translated.ja.md，且与源文件在同目录。",
+      "files": ["evals/files/README.en.md"],
+      "expectations": [
+        "输出文件命名可追溯到源文件",
+        "输出文件名包含目标语言标签 ja",
+        "输出文件在源文件同目录"
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "将 evals/files/api-reference.txt 翻译成英文（en-US）并保存，若目标文件已存在不能静默覆盖。",
+      "expected_output": "生成 api-reference.translated.en-US.txt；若同名存在，采用时间戳后缀文件名。",
+      "files": ["evals/files/api-reference.txt"],
+      "expectations": [
+        "默认输出命名符合 translated + 语言标签规则",
+        "存在同名时不覆盖并生成时间戳后缀",
+        "源文件未被改写"
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "把 evals/files/changelog.v2.en.md 翻译到简体中文（zh-CN），输出文件必须包含 .translated. 片段且放在原目录。",
+      "expected_output": "生成 changelog.v2.en.translated.zh-CN.md，位于原目录，原文不变。",
+      "files": ["evals/files/changelog.v2.en.md"],
+      "expectations": [
+        "输出文件名必须包含 .translated.zh-CN",
+        "输出文件与源文件位于同一目录",
+        "源文件内容保持不变"
+      ]
+    },
+    {
+      "id": 4,
+      "prompt": "将 evals/files/product spec.final.txt 翻译为德语（de），即使文件名有空格也要按规则输出并放原目录。",
+      "expected_output": "生成 product spec.final.translated.de.txt，且不改写源文件。",
+      "files": ["evals/files/product spec.final.txt"],
+      "expectations": [
+        "含空格文件名仍遵循 translated + 语言标签命名",
+        "输出文件在原目录",
+        "源文件未被覆盖"
+      ]
+    },
+    {
+      "id": 5,
+      "prompt": "翻译 evals/files/docs.v1/getting-started.md 到日语（ja），新文件必须写回该子目录而不是上层目录。",
+      "expected_output": "生成 docs.v1/getting-started.translated.ja.md，目录层级保持一致。",
+      "files": ["evals/files/docs.v1/getting-started.md"],
+      "expectations": [
+        "输出文件在 docs.v1 子目录",
+        "输出文件名包含 .translated.ja",
+        "源文件保持不变"
+      ]
+    },
+    {
+      "id": 6,
+      "prompt": "把 evals/files/rfc-001.md 翻译成法语（fr-FR），必须保留原扩展名并使用语言标签 fr-FR。",
+      "expected_output": "生成 rfc-001.translated.fr-FR.md。",
+      "files": ["evals/files/rfc-001.md"],
+      "expectations": [
+        "输出文件后缀仍是 .md",
+        "输出文件名包含 .translated.fr-FR",
+        "输出文件与源文件同目录"
+      ]
+    },
+    {
+      "id": 7,
+      "prompt": "将 evals/files/notes.zh.md 翻译到英语（en-US），注意源文件名已带语言片段，也要可追溯。",
+      "expected_output": "生成 notes.zh.translated.en-US.md。",
+      "files": ["evals/files/notes.zh.md"],
+      "expectations": [
+        "保留原 basename notes.zh",
+        "目标文件包含 .translated.en-US",
+        "源文件内容未改写"
+      ]
+    },
+    {
+      "id": 8,
+      "prompt": "把 evals/files/README.md 翻译成日语（ja）。若 README.translated.ja.md 已存在，必须生成带时间戳的新文件。",
+      "expected_output": "不覆盖现有译文，生成 README.translated.ja.<timestamp>.md。",
+      "files": ["evals/files/README.md"],
+      "expectations": [
+        "冲突时生成时间戳后缀文件",
+        "目标文件名包含 .translated.ja",
+        "源文件保持不变"
+      ]
+    }
+  ]
+}
