@@ -1,0 +1,15 @@
+{
+  "skill_name": "rswift-string-extends-import",
+  "evals": [
+    {
+      "id": 0,
+      "prompt": "项目已有 R.swift，并且已有 `zh.lproj/Localizable.strings` 和 `en.lproj/Localizable.strings`。目前项目里没有 `extends/string_extends.md`，也没有 `ja.lproj`。\n\n现在请你按 string_extends 约定创建 `extends/string_extends.md`（YAML），并导入 5 条本地化条目：每条都提供三列值（中文/英文/日文）。\n\nstring_extends YAML 必须是：\n- target_language: [zh, en]\n- default_mode: snake_case\n- 文件顶部要有说明：该文件仅用于 `.strings` 多语言本地化配置\n\n导入规则：\n- 中文写入 `zh.lproj/Localizable.strings`\n- 英文写入 `en.lproj/Localizable.strings`\n- 日文对应 `ja`：由于项目没有 `ja.lproj` 且 `ja` 不在 target_language 里，必须先询问用户/给出选项（不要直接创建 `ja.lproj` 或写入 `ja` 字符串）。\n\nKey + Values（都来自 Localizable-文言对照表.md 中同名 key 的三列）：\n- schedule_notes_seed_task_buy_milk_title: 中文=买牛奶，英文=Buy milk，日文=牛乳を買う\n- schedule_notes_seed_task_meeting_minutes_title: 中文=整理会议纪要，英文=Organize meeting minutes，日文=会議の議事録を整理する\n- schedule_notes_new_task_placeholder: 中文=输入新的 task，英文=Enter new task，日文=新しいタスクを入力\n- schedule_notes_add_button_title: 中文=添加，英文=Add，日文=追加\n- schedule_notes_save_button_title: 中文=保存，英文=Save，日文=保存\n\nDeliverables（只写到下面目录，且必须包含 response 文件用于“先询问”）：\n/Users/feilang/notes/.cursor/skills/rswift-string-extends-import-workspace/iteration-2/eval-0-zh-en-import-with-ja-column/with_skill/outputs/\n\nRequired output files:\n- `extends/string_extends.md`\n- `zh.lproj/Localizable.strings`\n- `en.lproj/Localizable.strings`\n- `response.md`：用中文说明为什么不会创建 `ja.lproj`，以及要怎么做（新建 ja.lproj 并可选扩展 target_language 等）。\n\n完成后回复一句话总结。",
+      "files": []
+    },
+    {
+      "id": 1,
+      "prompt": "现在项目已经存在 `extends/string_extends.md`，其 YAML 为：target_language: [zh, en] 且 default_mode: snake_case，并且文件顶部已有“仅用于 .strings 多语言本地化配置”的注释。\n\n项目仍然没有 `ja.lproj`。\n\n请把与 eval-0 相同的 5 条 key（中文/英文/日文三列）导入成本地化字符串。导入时：\n- 必须写入 zh 与 en\n- 对日文/ja 必须先询问用户，不要创建 ja.lproj\n\nDeliverables（只写到下面目录）：\n/Users/feilang/notes/.cursor/skills/rswift-string-extends-import-workspace/iteration-2/eval-1-existing-string-extends/with_skill/outputs/\n\nRequired output files:\n- `response.md`（先询问 ja）：中文\n- `zh.lproj/Localizable.strings`\n- `en.lproj/Localizable.strings`\n\n注意：`extends/string_extends.md` 不需要你重新创建（可在输出中复用或不写）。\n\n完成后回复一句话总结。",
+      "files": []
+    }
+  ]
+}

@@ -1,3 +1,0 @@
-Endpoint: /v1/search
-Method: GET
-Description: Returns matching records.

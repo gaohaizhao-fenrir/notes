@@ -6,6 +6,10 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		BBD2ED242F73C386003B60EF /* RswiftLibrary in Frameworks */ = {isa = PBXBuildFile; productRef = BB73BEF30123456789ABCDEF /* RswiftLibrary */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXContainerItemProxy section */
 		BB73BE632F6A76CC00D39291 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -52,6 +56,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BBD2ED242F73C386003B60EF /* RswiftLibrary in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -99,6 +104,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = BB73BE762F6A76CC00D39291 /* Build configuration list for PBXNativeTarget "schedule-notes" */;
 			buildPhases = (
+				BB73BEF40123456789ABCDEF /* rswift generate */,
 				BB73BE512F6A76C600D39291 /* Sources */,
 				BB73BE522F6A76C600D39291 /* Frameworks */,
 				BB73BE532F6A76C600D39291 /* Resources */,
@@ -112,6 +118,7 @@
 			);
 			name = "schedule-notes";
 			packageProductDependencies = (
+				BB73BEF30123456789ABCDEF /* RswiftLibrary */,
 			);
 			productName = "schedule-notes";
 			productReference = BB73BE552F6A76C600D39291 /* schedule-notes.app */;
@@ -192,9 +199,13 @@
 			knownRegions = (
 				en,
 				Base,
+				zh,
 			);
 			mainGroup = BB73BE4C2F6A76C600D39291;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				BB73BEF20123456789ABCDEF /* XCRemoteSwiftPackageReference "R" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = BB73BE562F6A76C600D39291 /* Products */;
 			projectDirPath = "";
@@ -230,6 +241,27 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		BB73BEF40123456789ABCDEF /* rswift generate */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PROJECT_DIR}/schedule-notes/en.lproj/Localizable.strings",
+				"${PROJECT_DIR}/schedule-notes/zh.lproj/Localizable.strings",
+				"${PROJECT_DIR}/schedule-notes/Scripts/rswift.sh",
+			);
+			name = "rswift generate";
+			outputPaths = (
+				"${PROJECT_DIR}/schedule-notes/R.generated.swift",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "sh \"${PROJECT_DIR}/schedule-notes/Scripts/rswift.sh\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		BB73BE512F6A76C600D39291 /* Sources */ = {
@@ -578,6 +610,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		BB73BEF20123456789ABCDEF /* XCRemoteSwiftPackageReference "R" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/mac-cain13/R.swift";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.8.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		BB73BEF30123456789ABCDEF /* RswiftLibrary */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BB73BEF20123456789ABCDEF /* XCRemoteSwiftPackageReference "R" */;
+			productName = RswiftLibrary;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = BB73BE4D2F6A76C600D39291 /* Project object */;
 }

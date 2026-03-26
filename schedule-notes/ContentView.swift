@@ -14,8 +14,8 @@ struct ContentView: View {
     }
 
     @State private var tasks: [TaskItem] = [
-        TaskItem(title: "买牛奶"),
-        TaskItem(title: "整理会议纪要")
+        TaskItem(title: R.string.localizable.schedule_notes_seed_task_buy_milk_title()),
+        TaskItem(title: R.string.localizable.schedule_notes_seed_task_meeting_minutes_title())
     ]
     @State private var newTaskTitle: String = ""
     @State private var editingTaskID: TaskItem.ID?
@@ -25,10 +25,10 @@ struct ContentView: View {
         NavigationStack {
             VStack(spacing: 12) {
                 HStack {
-                    TextField("输入新的 task", text: $newTaskTitle)
+                    TextField(R.string.localizable.schedule_notes_new_task_placeholder(), text: $newTaskTitle)
                         .textFieldStyle(.roundedBorder)
 
-                    Button("添加") {
+                    Button(R.string.localizable.schedule_notes_add_button_title()) {
                         addTask()
                     }
                     .buttonStyle(.borderedProminent)
@@ -40,10 +40,10 @@ struct ContentView: View {
                     ForEach($tasks) { $task in
                         HStack(spacing: 10) {
                             if editingTaskID == task.id {
-                                TextField("编辑 task", text: $editingTitle)
+                                TextField(R.string.localizable.schedule_notes_edit_task_placeholder(), text: $editingTitle)
                                     .textFieldStyle(.roundedBorder)
 
-                                Button("保存") {
+                                Button(R.string.localizable.schedule_notes_save_button_title()) {
                                     saveEdit(for: task.id)
                                 }
                                 .buttonStyle(.bordered)
@@ -51,7 +51,7 @@ struct ContentView: View {
                                 Text(task.title)
                                     .frame(maxWidth: .infinity, alignment: .leading)
 
-                                Button("修改") {
+                                Button(R.string.localizable.schedule_notes_modify_button_title()) {
                                     startEdit(for: task)
                                 }
                                 .buttonStyle(.bordered)
@@ -63,7 +63,7 @@ struct ContentView: View {
                 }
                 .listStyle(.plain)
             }
-            .navigationTitle("记事列表")
+            .navigationTitle(R.string.localizable.schedule_notes_list_title())
         }
     }
 
