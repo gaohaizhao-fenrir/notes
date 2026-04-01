@@ -14,20 +14,28 @@ if ! command -v rswift >/dev/null 2>&1; then
 fi
 
 OUTPUT_FILE="${PROJECT_DIR}/schedule-notes/R.generated.swift"
-LOCALIZABLE_EN="${PROJECT_DIR}/schedule-notes/en.lproj/Localizable.strings"
-LOCALIZABLE_ZH="${PROJECT_DIR}/schedule-notes/zh.lproj/Localizable.strings"
+STRINGS_DIR="${PROJECT_DIR}/schedule-notes"
 
-if [ ! -f "$LOCALIZABLE_EN" ] && [ ! -f "$LOCALIZABLE_ZH" ]; then
-  echo "warning: Localizable.strings not found under en.lproj/zh.lproj, skip R.generated.swift generation." >&2
+# 自动收集各 *.lproj/Localizable.strings（与 extends/string_extends.md 中语言增减对齐时无需改本脚本）
+set --
+if [ -d "$STRINGS_DIR" ]; then
+  while IFS= read -r f; do
+    [ -n "$f" ] || continue
+    set -- "$@" --input-files "$f"
+  done <<EOF
+$(find "$STRINGS_DIR" -maxdepth 2 -type f -name Localizable.strings 2>/dev/null | LC_ALL=C sort)
+EOF
+fi
+
+if [ "$#" -eq 0 ]; then
+  echo "warning: no Localizable.strings under schedule-notes/*.lproj, skip R.generated.swift generation." >&2
   exit 0
 fi
 
-# Generate from localized strings only (avoid reading xcodeproj in Xcode sandbox).
 rswift generate \
   --generators string \
   --input-type input-files \
-  --input-files "$LOCALIZABLE_EN" \
-  --input-files "$LOCALIZABLE_ZH" \
+  "$@" \
   "$OUTPUT_FILE"
 
 # Make call sites not depend on `RswiftResources`.

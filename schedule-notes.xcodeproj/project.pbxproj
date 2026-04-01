@@ -200,6 +200,7 @@
 				en,
 				Base,
 				zh,
+				ja,
 			);
 			mainGroup = BB73BE4C2F6A76C600D39291;
 			minimizedProjectReferenceProxies = 1;
@@ -249,8 +250,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${PROJECT_DIR}/schedule-notes/en.lproj/Localizable.strings",
-				"${PROJECT_DIR}/schedule-notes/zh.lproj/Localizable.strings",
+				"${PROJECT_DIR}/schedule-notes",
 				"${PROJECT_DIR}/schedule-notes/Scripts/rswift.sh",
 			);
 			name = "rswift generate";
